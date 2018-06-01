@@ -1,0 +1,22 @@
+
+
+<div class="container">
+    <div class="shadow p-3 m-5 bg-white rounded text-center ">
+      <%= link_to cours_path do %>
+      <button type="button" class="close mt-1 " aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <% end %>
+      <h1><%= @cour.title %></h1>
+
+
+      <p><%= "*" * @cour.stars %><p>
+        <p><b>
+          <%= @cour.created_at.strftime("%D %B %Y") %>
+        </b></p>
+
+      <p> <%= @cour.content %><p>
+      <%= link_to "Editer", edit_cour_path(@cour.id), class:"btn btn-warning" %>
+      <%= link_to "Détruire", cour_path(@cour.id), method: :delete, class:"btn btn-danger" %>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="text-center">
+<h1>Liste des cours</h1>
+</div>
+
+<div class="container">
+  <% @cours.each do |cour| %>
+
+  <%= link_to cour do %>
+    <div class="shadow p-3 mb-5 bg-white rounded d-flex justify-content-between">
+
+
+
+      <div>
+      <h2><%= cour.title %></h2>
+      <p><%= "*" * cour.stars %><p>
+      </div>
+
+        <div>
+          <%= cour.created_at.strftime("%D %B %Y") %>
+
+        </div>
+
+      </div>
+  <% end %>
+
+
+  <% end %>
+</div>
